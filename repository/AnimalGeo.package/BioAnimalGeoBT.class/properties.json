@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "HernanMoralesDurand 9/9/2018 22:50",
+	"super" : "BioAnimalGeoBreed",
+	"category" : "AnimalGeo-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"subSpecies",
+		"meat",
+		"dairy",
+		"horned",
+		"draught"
+	],
+	"name" : "BioAnimalGeoBT",
+	"type" : "normal"
+}

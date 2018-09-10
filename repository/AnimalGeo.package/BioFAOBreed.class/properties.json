@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "AnimalGeo-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"country",
+		"speciesName",
+		"breedName",
+		"conservationStatus",
+		"type"
+	],
+	"name" : "BioFAOBreed",
+	"type" : "normal"
+}

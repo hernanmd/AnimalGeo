@@ -1,0 +1,4 @@
+accessing
+beRegional
+
+	type := #regional

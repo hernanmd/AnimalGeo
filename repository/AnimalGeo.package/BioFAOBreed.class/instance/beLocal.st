@@ -1,0 +1,4 @@
+accessing
+beLocal
+
+	type := #local

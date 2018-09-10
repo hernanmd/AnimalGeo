@@ -1,0 +1,26 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNamedObject",
+	"category" : "AnimalGeo-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"synonyms",
+		"csFao",
+		"csM",
+		"country",
+		"region",
+		"absorvedBy",
+		"crossedFrom",
+		"wmKg",
+		"wfKg",
+		"breedComp1",
+		"breedComp2",
+		"associationUrls",
+		"hmCm",
+		"hfCm"
+	],
+	"name" : "BioAnimalGeoBreed",
+	"type" : "normal"
+}

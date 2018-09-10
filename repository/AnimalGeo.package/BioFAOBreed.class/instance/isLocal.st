@@ -1,0 +1,4 @@
+testing
+isLocal
+
+	^ type = #local

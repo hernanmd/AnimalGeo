@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 1/15/2018 15:42",
+	"super" : "Object",
+	"category" : "AnimalGeo-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioFAOBreedListParser",
+	"type" : "normal"
+}

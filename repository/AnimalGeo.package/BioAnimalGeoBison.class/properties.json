@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAnimalGeoBreed",
+	"category" : "AnimalGeo-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"subSpecies",
+		"draught",
+		"meat",
+		"horned",
+		"dairy"
+	],
+	"name" : "BioAnimalGeoBison",
+	"type" : "normal"
+}

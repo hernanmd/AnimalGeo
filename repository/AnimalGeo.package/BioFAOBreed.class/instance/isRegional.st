@@ -1,0 +1,4 @@
+testing
+isRegional
+
+	^ type = #regional
