@@ -1,7 +1,7 @@
 Class {
 	#name : #BioAnimalGeoListParser,
 	#superclass : #Object,
-	#category : 'AnimalGeo-Core'
+	#category : #'AnimalGeo-Core'
 }
 
 { #category : #accessing }

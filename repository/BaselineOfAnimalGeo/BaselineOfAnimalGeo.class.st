@@ -9,6 +9,8 @@ BaselineOfAnimalGeo >> baseline: spec [
 	<baseline>
 
 	spec for: #'common' do: [
+		spec blessing: #'baseline'.
+		spec repository: 'github://hernanmd/AnimalGeo/repository/'.
 		spec
 			baseline: 'BioSmalltalk' 
 			with: [ spec repository: 'github://hernanmd/BioSmalltalk/repository' ];

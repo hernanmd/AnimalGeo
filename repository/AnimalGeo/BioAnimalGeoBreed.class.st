@@ -17,7 +17,7 @@ Class {
 		'hmCm',
 		'hfCm'
 	],
-	#category : 'AnimalGeo-Core'
+	#category : #'AnimalGeo-Core'
 }
 
 { #category : #accessing }

@@ -8,7 +8,7 @@ Class {
 		'horned',
 		'dairy'
 	],
-	#category : 'AnimalGeo-Core'
+	#category : #'AnimalGeo-Core'
 }
 
 { #category : #accessing }

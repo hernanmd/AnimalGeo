@@ -8,7 +8,7 @@ Class {
 		'conservationStatus',
 		'type'
 	],
-	#category : 'AnimalGeo-Core'
+	#category : #'AnimalGeo-Core'
 }
 
 { #category : #accessing }

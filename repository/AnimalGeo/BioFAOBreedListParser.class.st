@@ -19,7 +19,7 @@ Internal Representation and Key Implementation Points.
 Class {
 	#name : #BioFAOBreedListParser,
 	#superclass : #Object,
-	#category : 'AnimalGeo-Core'
+	#category : #'AnimalGeo-Core'
 }
 
 { #category : #accessing }
