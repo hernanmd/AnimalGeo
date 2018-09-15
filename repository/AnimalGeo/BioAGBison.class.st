@@ -23,3 +23,53 @@ BioAGBison class >> speciesName [
 
 	^ 'Buffalo'
 ]
+
+{ #category : #accessing }
+BioAGBison >> dairy [
+	^ dairy
+]
+
+{ #category : #accessing }
+BioAGBison >> dairy: anObject [
+	dairy := anObject
+]
+
+{ #category : #accessing }
+BioAGBison >> draught [
+	^ draught
+]
+
+{ #category : #accessing }
+BioAGBison >> draught: anObject [
+	draught := anObject
+]
+
+{ #category : #accessing }
+BioAGBison >> horned [
+	^ horned
+]
+
+{ #category : #accessing }
+BioAGBison >> horned: anObject [
+	horned := anObject
+]
+
+{ #category : #accessing }
+BioAGBison >> meat [
+	^ meat
+]
+
+{ #category : #accessing }
+BioAGBison >> meat: anObject [
+	meat := anObject
+]
+
+{ #category : #accessing }
+BioAGBison >> subSpecies [
+	^ subSpecies
+]
+
+{ #category : #accessing }
+BioAGBison >> subSpecies: anObject [
+	subSpecies := anObject
+]

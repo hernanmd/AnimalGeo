@@ -20,3 +20,11 @@ BioAGMerger class >> mergeDatasets [
 		having: [ : g | spNames includes: g anyOne speciesName ]) inspect.
 
 ]
+
+{ #category : #accessing }
+BioAGMerger class >> readAGDatasets [
+	<example>
+
+	^ (BioAGBreed subclasses collect: [ : cls | cls readData ]) inspect.
+
+]

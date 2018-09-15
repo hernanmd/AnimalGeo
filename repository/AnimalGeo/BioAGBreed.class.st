@@ -1,3 +1,10 @@
+"
+CSV Format:
+
+First line represents header.
+Each subclass may contain exclusive fields matching species unique features.
+
+"
 Class {
 	#name : #BioAGBreed,
 	#superclass : #BioNamedObject,
