@@ -1,5 +1,5 @@
 Class {
-	#name : #BioAnimalGeoBreed,
+	#name : #BioAGBreed,
 	#superclass : #BioNamedObject,
 	#instVars : [
 		'synonyms',
@@ -21,13 +21,13 @@ Class {
 }
 
 { #category : #accessing }
-BioAnimalGeoBreed class >> fieldInstVarNames [
+BioAGBreed class >> fieldInstVarNames [
 
 	^ self allInstVarNames copyWithoutAll: #(versions date author names)
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed class >> readDataFrom: aFilename fields: fields [
+BioAGBreed class >> readDataFrom: aFilename fields: fields [
 
 	aFilename asFileReference readStreamDo: [ : readStream |
 		| reader |
@@ -40,141 +40,141 @@ BioAnimalGeoBreed class >> readDataFrom: aFilename fields: fields [
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> absorvedBy [
+BioAGBreed >> absorvedBy [
 	^ absorvedBy
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> absorvedBy: anObject [
+BioAGBreed >> absorvedBy: anObject [
 	absorvedBy := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> associationUrls [
+BioAGBreed >> associationUrls [
 	^ associationUrls
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> associationUrls: anObject [
+BioAGBreed >> associationUrls: anObject [
 	associationUrls := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> breedComp1 [
+BioAGBreed >> breedComp1 [
 	^ breedComp1
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> breedComp1: anObject [
+BioAGBreed >> breedComp1: anObject [
 	breedComp1 := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> breedComp2 [
+BioAGBreed >> breedComp2 [
 	^ breedComp2
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> breedComp2: anObject [
+BioAGBreed >> breedComp2: anObject [
 	breedComp2 := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> country [
+BioAGBreed >> country [
 	^ country
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> country: anObject [
+BioAGBreed >> country: anObject [
 	country := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> crossedFrom [
+BioAGBreed >> crossedFrom [
 	^ crossedFrom
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> crossedFrom: anObject [
+BioAGBreed >> crossedFrom: anObject [
 	crossedFrom := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> csFao [
+BioAGBreed >> csFao [
 	^ csFao
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> csFao: anObject [
+BioAGBreed >> csFao: anObject [
 	csFao := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> csM [
+BioAGBreed >> csM [
 	^ csM
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> csM: anObject [
+BioAGBreed >> csM: anObject [
 	csM := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> hfCm [
+BioAGBreed >> hfCm [
 	^ hfCm
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> hfCm: anObject [
+BioAGBreed >> hfCm: anObject [
 	hfCm := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> hmCm [
+BioAGBreed >> hmCm [
 	^ hmCm
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> hmCm: anObject [
+BioAGBreed >> hmCm: anObject [
 	hmCm := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> region [
+BioAGBreed >> region [
 	^ region
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> region: anObject [
+BioAGBreed >> region: anObject [
 	region := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> synonyms [
+BioAGBreed >> synonyms [
 	^ synonyms
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> synonyms: anObject [
+BioAGBreed >> synonyms: anObject [
 	synonyms := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> wfKg [
+BioAGBreed >> wfKg [
 	^ wfKg
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> wfKg: anObject [
+BioAGBreed >> wfKg: anObject [
 	wfKg := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> wmKg [
+BioAGBreed >> wmKg [
 	^ wmKg
 ]
 
 { #category : #accessing }
-BioAnimalGeoBreed >> wmKg: anObject [
+BioAGBreed >> wmKg: anObject [
 	wmKg := anObject
 ]

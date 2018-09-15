@@ -1,6 +1,6 @@
 Class {
-	#name : #BioAnimalGeoCFamiliaris,
-	#superclass : #BioAnimalGeoBreed,
+	#name : #BioAGCanis,
+	#superclass : #BioAGBreed,
 	#instVars : [
 		'subSpecies',
 		'meat',
@@ -12,58 +12,64 @@ Class {
 }
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris class >> readData [
+BioAGCanis class >> readData [
 	" Answer a <Collection> with receiver's parsed data "
 
 	^ self readDataFrom: 'ag_cfamiliaris.csv' fields: self fieldInstVarNames
 ]
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris >> dairy [
+BioAGCanis class >> speciesName [
+
+	^ 'Dog'
+]
+
+{ #category : #accessing }
+BioAGCanis >> dairy [
 	^ dairy
 ]
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris >> dairy: anObject [
+BioAGCanis >> dairy: anObject [
 	dairy := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris >> draught [
+BioAGCanis >> draught [
 	^ draught
 ]
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris >> draught: anObject [
+BioAGCanis >> draught: anObject [
 	draught := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris >> horned [
+BioAGCanis >> horned [
 	^ horned
 ]
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris >> horned: anObject [
+BioAGCanis >> horned: anObject [
 	horned := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris >> meat [
+BioAGCanis >> meat [
 	^ meat
 ]
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris >> meat: anObject [
+BioAGCanis >> meat: anObject [
 	meat := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris >> subSpecies [
+BioAGCanis >> subSpecies [
 	^ subSpecies
 ]
 
 { #category : #accessing }
-BioAnimalGeoCFamiliaris >> subSpecies: anObject [
+BioAGCanis >> subSpecies: anObject [
 	subSpecies := anObject
 ]

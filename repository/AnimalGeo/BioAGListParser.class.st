@@ -1,11 +1,11 @@
 Class {
-	#name : #BioAnimalGeoListParser,
+	#name : #BioAGListParser,
 	#superclass : #Object,
 	#category : #'AnimalGeo-Core'
 }
 
 { #category : #accessing }
-BioAnimalGeoListParser class >> readFileNamed: fileName [
+BioAGListParser class >> readFileNamed: fileName [
 
 	^ fileName asFileReference
 		readStreamDo: [ :readStream | 

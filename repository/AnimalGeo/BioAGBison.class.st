@@ -1,6 +1,6 @@
 Class {
-	#name : #BioAnimalGeoBison,
-	#superclass : #BioAnimalGeoBreed,
+	#name : #BioAGBison,
+	#superclass : #BioAGBreed,
 	#instVars : [
 		'subSpecies',
 		'draught',
@@ -12,8 +12,14 @@ Class {
 }
 
 { #category : #accessing }
-BioAnimalGeoBison class >> readData [
+BioAGBison class >> readData [
 	" Answer a <Collection> with receiver's parsed data "
 
 	^ self readDataFrom: 'ag_bbison.csv' fields: self fieldInstVarNames
+]
+
+{ #category : #accessing }
+BioAGBison class >> speciesName [
+
+	^ 'Buffalo'
 ]

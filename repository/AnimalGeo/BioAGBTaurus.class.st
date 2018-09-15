@@ -4,8 +4,8 @@ Read CSV data to merge from Mason repository.
 BioAnimalGeoBT readData.
 "
 Class {
-	#name : #BioAnimalGeoBT,
-	#superclass : #BioAnimalGeoBreed,
+	#name : #BioAGBTaurus,
+	#superclass : #BioAGBreed,
 	#instVars : [
 		'subSpecies',
 		'meat',
@@ -17,58 +17,64 @@ Class {
 }
 
 { #category : #accessing }
-BioAnimalGeoBT class >> readData [
+BioAGBTaurus class >> readData [
 	" Answer a <Collection> with receiver's parsed data "
 
 	^ self readDataFrom: 'ag_btaurus.csv' fields: self fieldInstVarNames
 ]
 
 { #category : #accessing }
-BioAnimalGeoBT >> dairy [
+BioAGBTaurus class >> speciesName [
+
+	^ 'Cattle'
+]
+
+{ #category : #accessing }
+BioAGBTaurus >> dairy [
 	^ dairy
 ]
 
 { #category : #accessing }
-BioAnimalGeoBT >> dairy: anObject [
+BioAGBTaurus >> dairy: anObject [
 	dairy := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBT >> draught [
+BioAGBTaurus >> draught [
 	^ draught
 ]
 
 { #category : #accessing }
-BioAnimalGeoBT >> draught: anObject [
+BioAGBTaurus >> draught: anObject [
 	draught := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBT >> horned [
+BioAGBTaurus >> horned [
 	^ horned
 ]
 
 { #category : #accessing }
-BioAnimalGeoBT >> horned: anObject [
+BioAGBTaurus >> horned: anObject [
 	horned := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBT >> meat [
+BioAGBTaurus >> meat [
 	^ meat
 ]
 
 { #category : #accessing }
-BioAnimalGeoBT >> meat: anObject [
+BioAGBTaurus >> meat: anObject [
 	meat := anObject
 ]
 
 { #category : #accessing }
-BioAnimalGeoBT >> subSpecies [
+BioAGBTaurus >> subSpecies [
 	^ subSpecies
 ]
 
 { #category : #accessing }
-BioAnimalGeoBT >> subSpecies: anObject [
+BioAGBTaurus >> subSpecies: anObject [
 	subSpecies := anObject
 ]

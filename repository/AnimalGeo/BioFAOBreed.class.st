@@ -77,6 +77,17 @@ BioFAOBreed >> isRegional [
 	^ type = #regional
 ]
 
+{ #category : #printing }
+BioFAOBreed >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream
+		space; 
+		nextPutAll: self speciesName between: $( and: $);
+		space;
+		nextPutAll: self breedName.
+]
+
 { #category : #accessing }
 BioFAOBreed >> speciesName [
 	^ speciesName
