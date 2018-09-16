@@ -17,7 +17,7 @@ Class {
 BioAGOvis class >> readData [
 	" Answer a <Collection> with receiver's parsed data "
 
-	^ self readDataFrom: 'ag_oaries.csv' fields: self fieldInstVarNames
+	^ self readDataFrom: 'ag_oaries.csv'
 ]
 
 { #category : #accessing }

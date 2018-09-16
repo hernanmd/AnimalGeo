@@ -35,7 +35,7 @@ BioAGBreed class >> fieldInstVarNames [
 ]
 
 { #category : #accessing }
-BioAGBreed class >> readDataFrom: aFilename fields: fields [
+BioAGBreed class >> readDataFrom: aFilename [
 
 	aFilename asFileReference readStreamDo: [ : readStream |
 		| reader headers |
