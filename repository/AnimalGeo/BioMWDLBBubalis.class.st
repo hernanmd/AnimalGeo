@@ -1,6 +1,6 @@
 Class {
-	#name : #BioAGBison,
-	#superclass : #BioAGBreed,
+	#name : #BioMWDLBBubalis,
+	#superclass : #BioMWDLBreed,
 	#instVars : [
 		'subSpecies',
 		'draught',
@@ -8,68 +8,68 @@ Class {
 		'horned',
 		'dairy'
 	],
-	#category : #'AnimalGeo-Core'
+	#category : #'AnimalGeo-MWDLB'
 }
 
 { #category : #accessing }
-BioAGBison class >> readData [
+BioMWDLBBubalis class >> readData [
 	" Answer a <Collection> with receiver's parsed data "
 
 	^ self readDataFrom: 'ag_bbison.csv'
 ]
 
 { #category : #accessing }
-BioAGBison class >> speciesName [
+BioMWDLBBubalis class >> speciesName [
 
 	^ 'Buffalo'
 ]
 
 { #category : #accessing }
-BioAGBison >> dairy [
+BioMWDLBBubalis >> dairy [
 	^ dairy
 ]
 
 { #category : #accessing }
-BioAGBison >> dairy: anObject [
+BioMWDLBBubalis >> dairy: anObject [
 	dairy := anObject
 ]
 
 { #category : #accessing }
-BioAGBison >> draught [
+BioMWDLBBubalis >> draught [
 	^ draught
 ]
 
 { #category : #accessing }
-BioAGBison >> draught: anObject [
+BioMWDLBBubalis >> draught: anObject [
 	draught := anObject
 ]
 
 { #category : #accessing }
-BioAGBison >> horned [
+BioMWDLBBubalis >> horned [
 	^ horned
 ]
 
 { #category : #accessing }
-BioAGBison >> horned: anObject [
+BioMWDLBBubalis >> horned: anObject [
 	horned := anObject
 ]
 
 { #category : #accessing }
-BioAGBison >> meat [
+BioMWDLBBubalis >> meat [
 	^ meat
 ]
 
 { #category : #accessing }
-BioAGBison >> meat: anObject [
+BioMWDLBBubalis >> meat: anObject [
 	meat := anObject
 ]
 
 { #category : #accessing }
-BioAGBison >> subspecies [
+BioMWDLBBubalis >> subspecies [
 	^ subSpecies
 ]
 
 { #category : #accessing }
-BioAGBison >> subspecies: anObject [
+BioMWDLBBubalis >> subspecies: anObject [
 	subSpecies := anObject
 ]

@@ -14,7 +14,7 @@ BioAGMerger class >> mergeDatasets [
 
 	| spNames |
 	
-	spNames := (BioAGBreed subclasses collect: #speciesName).
+	spNames := (BioMWDLBreed subclasses collect: #speciesName).
 	^ (BioFAOBreedListParser collectRaceLists 
 		groupedBy: #speciesName
 		having: [ : g | spNames includes: g anyOne speciesName ]) inspect.
@@ -25,6 +25,6 @@ BioAGMerger class >> mergeDatasets [
 BioAGMerger class >> readAGDatasets [
 	<example>
 
-	^ (BioAGBreed subclasses collect: [ : cls | cls readData ]) inspect.
-
+	^ (BioMWDLBreed subclasses 
+			collect: [ : cls | cls readData do: #explodeSyns ]) inspect
 ]

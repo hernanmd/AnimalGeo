@@ -1,6 +1,21 @@
+"
+Reader for Ovis Aries
+
+    Instance Variables
+	dairy:		<Object>
+	hobby:		<Object>
+	meat:		<Object>
+	research:		<Object>
+	subSpecies:		<Object>
+	vegMgmt:		<Object>
+	wool:		<Object>
+
+
+    Implementation Points
+"
 Class {
-	#name : #BioAGOvis,
-	#superclass : #BioAGBreed,
+	#name : #BioMWDLOAries,
+	#superclass : #BioMWDLBreed,
 	#instVars : [
 		'subSpecies',
 		'dairy',
@@ -10,88 +25,88 @@ Class {
 		'hobby',
 		'meat'
 	],
-	#category : #'AnimalGeo-Core'
+	#category : #'AnimalGeo-MWDLB'
 }
 
 { #category : #accessing }
-BioAGOvis class >> readData [
+BioMWDLOAries class >> readData [
 	" Answer a <Collection> with receiver's parsed data "
 
 	^ self readDataFrom: 'ag_oaries.csv'
 ]
 
 { #category : #accessing }
-BioAGOvis class >> speciesName [
+BioMWDLOAries class >> speciesName [
 
 	^ 'Sheep'
 ]
 
 { #category : #accessing }
-BioAGOvis >> dairy [
+BioMWDLOAries >> dairy [
 	^ dairy
 ]
 
 { #category : #accessing }
-BioAGOvis >> dairy: anObject [
+BioMWDLOAries >> dairy: anObject [
 	dairy := anObject
 ]
 
 { #category : #accessing }
-BioAGOvis >> hobby [
+BioMWDLOAries >> hobby [
 	^ hobby
 ]
 
 { #category : #accessing }
-BioAGOvis >> hobby: anObject [
+BioMWDLOAries >> hobby: anObject [
 	hobby := anObject
 ]
 
 { #category : #accessing }
-BioAGOvis >> meat [
+BioMWDLOAries >> meat [
 	^ meat
 ]
 
 { #category : #accessing }
-BioAGOvis >> meat: anObject [
+BioMWDLOAries >> meat: anObject [
 	meat := anObject
 ]
 
 { #category : #accessing }
-BioAGOvis >> research [
+BioMWDLOAries >> research [
 	^ research
 ]
 
 { #category : #accessing }
-BioAGOvis >> research: anObject [
+BioMWDLOAries >> research: anObject [
 	research := anObject
 ]
 
 { #category : #accessing }
-BioAGOvis >> subspecies [
+BioMWDLOAries >> subspecies [
 	^ subSpecies
 ]
 
 { #category : #accessing }
-BioAGOvis >> subspecies: anObject [
+BioMWDLOAries >> subspecies: anObject [
 	subSpecies := anObject
 ]
 
 { #category : #accessing }
-BioAGOvis >> vegMgmt [
+BioMWDLOAries >> vegMgmt [
 	^ vegMgmt
 ]
 
 { #category : #accessing }
-BioAGOvis >> vegMgmt: anObject [
+BioMWDLOAries >> vegMgmt: anObject [
 	vegMgmt := anObject
 ]
 
 { #category : #accessing }
-BioAGOvis >> wool [
+BioMWDLOAries >> wool [
 	^ wool
 ]
 
 { #category : #accessing }
-BioAGOvis >> wool: anObject [
+BioMWDLOAries >> wool: anObject [
 	wool := anObject
 ]

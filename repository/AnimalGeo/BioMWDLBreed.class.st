@@ -1,4 +1,8 @@
 "
+Abstract importer class methods for breeds varieties based in the ""Mason's World Dictionary of Livestock Breeds, Types and Varieties"" book.
+
+The source book is a standard reference text, and contains key breed information about cattle, sheep, pigs, goats, horses, donkeys and buffalo.
+
 CSV Format:
 
 First line represents header.
@@ -6,7 +10,7 @@ Each subclass may contain exclusive fields matching species unique features.
 
 "
 Class {
-	#name : #BioAGBreed,
+	#name : #BioMWDLBreed,
 	#superclass : #BioNamedObject,
 	#instVars : [
 		'synonyms',
@@ -25,141 +29,146 @@ Class {
 		'hfCm',
 		'breedName'
 	],
-	#category : #'AnimalGeo-Core'
+	#category : #'AnimalGeo-MWDLB'
 }
 
 { #category : #accessing }
-BioAGBreed class >> fieldInstVarNames [
-
-	^ self allInstVarNames copyWithoutAll: #(versions date author names)
-]
-
-{ #category : #accessing }
-BioAGBreed class >> readDataFrom: aFilename [
+BioMWDLBreed class >> readDataFrom: aFilename [
 
 	aFilename asFileReference readStreamDo: [ : readStream |
-		| reader headers |
+		| reader |
 		reader := (NeoCSVReader on: readStream)
 			separator: $;;
 			recordClass: self.
-		headers := reader readHeader collect: [ : a | (a uncapitalized copyWithout: $_) asSymbol ].
-		headers do: [ : f | reader addField: f asMutator ].
+		(reader readHeader collect: [ : a | (a uncapitalized copyWithout: $_) asSymbol ])
+			do: [ : f | reader addField: f asMutator ].
 		^ reader upToEnd ] 
 ]
 
 { #category : #accessing }
-BioAGBreed >> absorbedBy [
+BioMWDLBreed >> absorbedBy [
 	^ absorvedBy
 ]
 
 { #category : #accessing }
-BioAGBreed >> absorbedBy: anObject [
+BioMWDLBreed >> absorbedBy: anObject [
 	absorvedBy := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> associationURLs [
+BioMWDLBreed >> associationURLs [
 	^ associationUrls
 ]
 
 { #category : #accessing }
-BioAGBreed >> associationURLs: anObject [
+BioMWDLBreed >> associationURLs: anObject [
 	associationUrls := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> breedComposition1 [
+BioMWDLBreed >> breedComposition1 [
 	^ breedComp1
 ]
 
 { #category : #accessing }
-BioAGBreed >> breedComposition1: anObject [
+BioMWDLBreed >> breedComposition1: anObject [
 	breedComp1 := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> breedComposition2 [
+BioMWDLBreed >> breedComposition2 [
 	^ breedComp2
 ]
 
 { #category : #accessing }
-BioAGBreed >> breedComposition2: anObject [
+BioMWDLBreed >> breedComposition2: anObject [
 	breedComp2 := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> breedName [
+BioMWDLBreed >> breedName [
 	^ breedName
 ]
 
 { #category : #accessing }
-BioAGBreed >> breedName: anObject [
+BioMWDLBreed >> breedName: anObject [
 	breedName := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> country [
+BioMWDLBreed >> country [
 	^ country
 ]
 
 { #category : #accessing }
-BioAGBreed >> country: anObject [
+BioMWDLBreed >> country: anObject [
 	country := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> crossedFrom [
+BioMWDLBreed >> crossedFrom [
 	^ crossedFrom
 ]
 
 { #category : #accessing }
-BioAGBreed >> crossedFrom: anObject [
+BioMWDLBreed >> crossedFrom: anObject [
 	crossedFrom := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> csfao [
+BioMWDLBreed >> csfao [
 	^ csFao
 ]
 
 { #category : #accessing }
-BioAGBreed >> csfao: anObject [
+BioMWDLBreed >> csfao: anObject [
 	csFao := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> csmason [
+BioMWDLBreed >> csmason [
 	^ csMason
 ]
 
 { #category : #accessing }
-BioAGBreed >> csmason: anObject [
+BioMWDLBreed >> csmason: anObject [
 
 	csMason := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> hFcm [
+BioMWDLBreed >> explodeSyns [
+
+	(self synonyms notNil and: [ self synonyms notEmpty ]) 
+		ifTrue: [
+			self synonyms = '-'
+				ifTrue: [ self synonyms: (OrderedCollection new: 1) ]
+				ifFalse: [ self synonyms: ((self synonyms findTokens: ',') collect: #trimBoth) ] ].
+
+]
+
+{ #category : #accessing }
+BioMWDLBreed >> hFcm [
 	^ hfCm
 ]
 
 { #category : #accessing }
-BioAGBreed >> hFcm: anObject [
+BioMWDLBreed >> hFcm: anObject [
 	hfCm := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> hMcm [
+BioMWDLBreed >> hMcm [
 	^ hmCm
 ]
 
 { #category : #accessing }
-BioAGBreed >> hMcm: anObject [
+BioMWDLBreed >> hMcm: anObject [
 	hmCm := anObject
 ]
 
 { #category : #printing }
-BioAGBreed >> printOn: aStream [
+BioMWDLBreed >> printOn: aStream [
 
 	super printOn: aStream.
 	aStream
@@ -170,41 +179,41 @@ BioAGBreed >> printOn: aStream [
 ]
 
 { #category : #accessing }
-BioAGBreed >> region [
+BioMWDLBreed >> region [
 	^ region
 ]
 
 { #category : #accessing }
-BioAGBreed >> region: anObject [
+BioMWDLBreed >> region: anObject [
 	region := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> synonyms [
+BioMWDLBreed >> synonyms [
 	^ synonyms
 ]
 
 { #category : #accessing }
-BioAGBreed >> synonyms: anObject [
+BioMWDLBreed >> synonyms: anObject [
 	synonyms := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> wFKg [
+BioMWDLBreed >> wFKg [
 	^ wfKg
 ]
 
 { #category : #accessing }
-BioAGBreed >> wFkg: anObject [
+BioMWDLBreed >> wFkg: anObject [
 	wfKg := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> wMkg [
+BioMWDLBreed >> wMkg [
 	^ wmKg
 ]
 
 { #category : #accessing }
-BioAGBreed >> wMkg: anObject [
+BioMWDLBreed >> wMkg: anObject [
 	wmKg := anObject
 ]

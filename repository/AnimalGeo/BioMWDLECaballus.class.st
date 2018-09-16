@@ -1,53 +1,53 @@
 Class {
-	#name : #BioAGEqu,
-	#superclass : #BioAGBreed,
+	#name : #BioMWDLECaballus,
+	#superclass : #BioMWDLBreed,
 	#instVars : [
 		'draught',
 		'meat',
 		'hobby'
 	],
-	#category : #'AnimalGeo-Core'
+	#category : #'AnimalGeo-MWDLB'
 }
 
 { #category : #accessing }
-BioAGEqu class >> readData [
+BioMWDLECaballus class >> readData [
 	" Answer a <Collection> with receiver's parsed data "
 
 	^ self readDataFrom: 'ag_ecaballus.csv'
 ]
 
 { #category : #accessing }
-BioAGEqu class >> speciesName [
+BioMWDLECaballus class >> speciesName [
 
 	^ 'Horse'
 ]
 
 { #category : #accessing }
-BioAGEqu >> draught [
+BioMWDLECaballus >> draught [
 	^ draught
 ]
 
 { #category : #accessing }
-BioAGEqu >> draught: anObject [
+BioMWDLECaballus >> draught: anObject [
 	draught := anObject
 ]
 
 { #category : #accessing }
-BioAGEqu >> hobby [
+BioMWDLECaballus >> hobby [
 	^ hobby
 ]
 
 { #category : #accessing }
-BioAGEqu >> hobby: anObject [
+BioMWDLECaballus >> hobby: anObject [
 	hobby := anObject
 ]
 
 { #category : #accessing }
-BioAGEqu >> meat [
+BioMWDLECaballus >> meat [
 	^ meat
 ]
 
 { #category : #accessing }
-BioAGEqu >> meat: anObject [
+BioMWDLECaballus >> meat: anObject [
 	meat := anObject
 ]
