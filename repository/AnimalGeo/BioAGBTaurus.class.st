@@ -7,7 +7,7 @@ Class {
 	#name : #BioAGBTaurus,
 	#superclass : #BioAGBreed,
 	#instVars : [
-		'subSpecies',
+		'subspecies',
 		'meat',
 		'dairy',
 		'horned',
@@ -70,11 +70,11 @@ BioAGBTaurus >> meat: anObject [
 ]
 
 { #category : #accessing }
-BioAGBTaurus >> subSpecies [
-	^ subSpecies
+BioAGBTaurus >> subspecies [
+	^ subspecies
 ]
 
 { #category : #accessing }
-BioAGBTaurus >> subSpecies: anObject [
-	subSpecies := anObject
+BioAGBTaurus >> subspecies: anObject [
+	subspecies := anObject
 ]

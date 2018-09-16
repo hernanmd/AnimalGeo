@@ -65,11 +65,11 @@ BioAGBison >> meat: anObject [
 ]
 
 { #category : #accessing }
-BioAGBison >> subSpecies [
+BioAGBison >> subspecies [
 	^ subSpecies
 ]
 
 { #category : #accessing }
-BioAGBison >> subSpecies: anObject [
+BioAGBison >> subspecies: anObject [
 	subSpecies := anObject
 ]

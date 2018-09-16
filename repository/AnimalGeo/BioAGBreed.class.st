@@ -11,7 +11,7 @@ Class {
 	#instVars : [
 		'synonyms',
 		'csFao',
-		'csM',
+		'csMason',
 		'country',
 		'region',
 		'absorvedBy',
@@ -22,7 +22,8 @@ Class {
 		'breedComp2',
 		'associationUrls',
 		'hmCm',
-		'hfCm'
+		'hfCm',
+		'breedName'
 	],
 	#category : #'AnimalGeo-Core'
 }
@@ -37,53 +38,63 @@ BioAGBreed class >> fieldInstVarNames [
 BioAGBreed class >> readDataFrom: aFilename fields: fields [
 
 	aFilename asFileReference readStreamDo: [ : readStream |
-		| reader |
+		| reader headers |
 		reader := (NeoCSVReader on: readStream)
 			separator: $;;
-			skipHeader;
 			recordClass: self.
-		fields do: [ : f | reader addField: f asMutator ].
+		headers := reader readHeader collect: [ : a | (a uncapitalized copyWithout: $_) asSymbol ].
+		headers do: [ : f | reader addField: f asMutator ].
 		^ reader upToEnd ] 
 ]
 
 { #category : #accessing }
-BioAGBreed >> absorvedBy [
+BioAGBreed >> absorbedBy [
 	^ absorvedBy
 ]
 
 { #category : #accessing }
-BioAGBreed >> absorvedBy: anObject [
+BioAGBreed >> absorbedBy: anObject [
 	absorvedBy := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> associationUrls [
+BioAGBreed >> associationURLs [
 	^ associationUrls
 ]
 
 { #category : #accessing }
-BioAGBreed >> associationUrls: anObject [
+BioAGBreed >> associationURLs: anObject [
 	associationUrls := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> breedComp1 [
+BioAGBreed >> breedComposition1 [
 	^ breedComp1
 ]
 
 { #category : #accessing }
-BioAGBreed >> breedComp1: anObject [
+BioAGBreed >> breedComposition1: anObject [
 	breedComp1 := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> breedComp2 [
+BioAGBreed >> breedComposition2 [
 	^ breedComp2
 ]
 
 { #category : #accessing }
-BioAGBreed >> breedComp2: anObject [
+BioAGBreed >> breedComposition2: anObject [
 	breedComp2 := anObject
+]
+
+{ #category : #accessing }
+BioAGBreed >> breedName [
+	^ breedName
+]
+
+{ #category : #accessing }
+BioAGBreed >> breedName: anObject [
+	breedName := anObject
 ]
 
 { #category : #accessing }
@@ -107,43 +118,55 @@ BioAGBreed >> crossedFrom: anObject [
 ]
 
 { #category : #accessing }
-BioAGBreed >> csFao [
+BioAGBreed >> csfao [
 	^ csFao
 ]
 
 { #category : #accessing }
-BioAGBreed >> csFao: anObject [
+BioAGBreed >> csfao: anObject [
 	csFao := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> csM [
-	^ csM
+BioAGBreed >> csmason [
+	^ csMason
 ]
 
 { #category : #accessing }
-BioAGBreed >> csM: anObject [
-	csM := anObject
+BioAGBreed >> csmason: anObject [
+
+	csMason := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> hfCm [
+BioAGBreed >> hFcm [
 	^ hfCm
 ]
 
 { #category : #accessing }
-BioAGBreed >> hfCm: anObject [
+BioAGBreed >> hFcm: anObject [
 	hfCm := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> hmCm [
+BioAGBreed >> hMcm [
 	^ hmCm
 ]
 
 { #category : #accessing }
-BioAGBreed >> hmCm: anObject [
+BioAGBreed >> hMcm: anObject [
 	hmCm := anObject
+]
+
+{ #category : #printing }
+BioAGBreed >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream
+		space; 
+		nextPutAll: self breedName between: $( and: $);
+		space;
+		nextPutAll: self country.
 ]
 
 { #category : #accessing }
@@ -167,21 +190,21 @@ BioAGBreed >> synonyms: anObject [
 ]
 
 { #category : #accessing }
-BioAGBreed >> wfKg [
+BioAGBreed >> wFKg [
 	^ wfKg
 ]
 
 { #category : #accessing }
-BioAGBreed >> wfKg: anObject [
+BioAGBreed >> wFkg: anObject [
 	wfKg := anObject
 ]
 
 { #category : #accessing }
-BioAGBreed >> wmKg [
+BioAGBreed >> wMkg [
 	^ wmKg
 ]
 
 { #category : #accessing }
-BioAGBreed >> wmKg: anObject [
+BioAGBreed >> wMkg: anObject [
 	wmKg := anObject
 ]

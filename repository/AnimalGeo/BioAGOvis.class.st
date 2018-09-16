@@ -67,12 +67,12 @@ BioAGOvis >> research: anObject [
 ]
 
 { #category : #accessing }
-BioAGOvis >> subSpecies [
+BioAGOvis >> subspecies [
 	^ subSpecies
 ]
 
 { #category : #accessing }
-BioAGOvis >> subSpecies: anObject [
+BioAGOvis >> subspecies: anObject [
 	subSpecies := anObject
 ]
 

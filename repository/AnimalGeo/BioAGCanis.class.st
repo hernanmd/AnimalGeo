@@ -65,11 +65,11 @@ BioAGCanis >> meat: anObject [
 ]
 
 { #category : #accessing }
-BioAGCanis >> subSpecies [
+BioAGCanis >> subspecies [
 	^ subSpecies
 ]
 
 { #category : #accessing }
-BioAGCanis >> subSpecies: anObject [
+BioAGCanis >> subspecies: anObject [
 	subSpecies := anObject
 ]
