@@ -14,7 +14,6 @@ Class {
 	#superclass : #BioNamedObject,
 	#instVars : [
 		'synonyms',
-		'csFao',
 		'csMason',
 		'country',
 		'region',
@@ -136,7 +135,20 @@ BioMWDLBreed >> csmason: anObject [
 	csMason := anObject
 ]
 
-{ #category : #accessing }
+{ #category : #curation }
+BioMWDLBreed >> explodeLocations [
+
+	(self region notNil and: [ self region notEmpty ]) 
+		ifTrue: [
+			self region = '-'
+				ifTrue: [ self region: (OrderedCollection new: 1) ]
+				ifFalse: [ self region: ((self region findTokens: ',') collect: #trimBoth) ] ]
+		ifFalse: [
+			self region: (OrderedCollection new: 1) ].
+
+]
+
+{ #category : #curation }
 BioMWDLBreed >> explodeSyns [
 
 	(self synonyms notNil and: [ self synonyms notEmpty ]) 
@@ -167,6 +179,50 @@ BioMWDLBreed >> hMcm: anObject [
 	hmCm := anObject
 ]
 
+{ #category : #comparing }
+BioMWDLBreed >> matchesAny: aBioFAOBreed [ 
+
+	((self breedName alike: aBioFAOBreed breedName) > 2)
+		ifTrue: [ ^ true ].
+	(self synonyms notNil and: [ self synonyms includes: aBioFAOBreed breedName ])
+		ifTrue: [ ^ true ].
+	^ false
+
+]
+
+{ #category : #accessing }
+BioMWDLBreed >> merge: aBioFAOBreed [ 
+
+	| agBreed |	
+	agBreed := BioAGBreed new
+		synonyms: (self synonyms ifNil: [ OrderedCollection new ] ifNotNil: [ self synonyms ]);
+		csFao: aBioFAOBreed conservationStatus;
+		csMason: self csmason;
+		region: self region;
+		absorvedBy: self absorbedBy;
+		crossedFrom: self crossedFrom;
+		wmKg: self wMkg;
+		wfKg: self wFKg;
+		breedComp1: self breedComposition1;
+		breedComp2: self breedComposition2;
+		associationUrls: self associationURLs;
+		hmCm: self hMcm;
+		hfCm: self hFcm;
+		yourself.
+	self country ~= aBioFAOBreed country 
+		ifTrue: [ 
+			self country = '-'
+				ifTrue: [ agBreed country: aBioFAOBreed country ]
+				ifFalse: [ (aBioFAOBreed country = '-' or: [ aBioFAOBreed country isNil ])
+						ifTrue: [ agBreed country: self country ]
+						ifFalse: [ self halt ] ] ]
+		ifFalse: [ agBreed country: self country ].
+	self breedName ~= aBioFAOBreed breedName 
+		ifTrue: [ agBreed synonyms add: aBioFAOBreed breedName ].
+	agBreed breedName: self breedName.
+	^ agBreed 
+]
+
 { #category : #printing }
 BioMWDLBreed >> printOn: aStream [
 
@@ -186,6 +242,11 @@ BioMWDLBreed >> region [
 { #category : #accessing }
 BioMWDLBreed >> region: anObject [
 	region := anObject
+]
+
+{ #category : #accessing }
+BioMWDLBreed >> speciesName [
+	^ self class speciesName.
 ]
 
 { #category : #accessing }
